@@ -17,7 +17,7 @@ LOCAL = $(CWARNS)
 
 
 CC= g++
-CFLAGS= -Wall $(MYCFLAGS) -O2
+CFLAGS= -Wall $(MYCFLAGS) -O2 -std=c++11
 AR= ar rcu
 RANLIB= ranlib
 RM= rm -f
@@ -28,9 +28,9 @@ MYLIBS=
 
 
 # enable Linux goodies
-MYCFLAGS= $(LOCAL) -DLUA_USE_LINUX
-MYLDFLAGS= -Wl,-E
-MYLIBS= -ldl -lreadline -lhistory
+# MYCFLAGS= $(LOCAL) -DLUA_USE_LINUX
+# MYLDFLAGS= -Wl,-E
+# MYLIBS= -ldl -lreadline -lhistory
 
 
 
@@ -39,7 +39,7 @@ MYLIBS= -ldl -lreadline -lhistory
 
 LIBS = -lm
 
-CORE_T=	liblua.a
+CORE_T=	libz8lua.a
 CORE_O=	lapi.o lcode.o ldebug.o ldo.o ldump.o lfunc.o lgc.o llex.o lmem.o \
 	lobject.o lopcodes.o lparser.o lstate.o lstring.o ltable.o ltm.o  \
 	lundump.o lvm.o lzio.o lctype.o eris.o
