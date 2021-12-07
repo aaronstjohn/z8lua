@@ -23,12 +23,12 @@ CFLAGS= -Wall $(MYCFLAGS) -O2 -std=c++17
 # RANLIB= ranlib
 RM= rm -f
 
-MYCFLAGS= $(LOCAL)
+MYCFLAGS= $(LOCAL) -DLUA_USE_LONGJMP
 MYLDFLAGS=
 MYLIBS=
 
 
-# enable Linux goodies
+# # enable Linux goodies
 # MYCFLAGS= $(LOCAL) -DLUA_USE_LINUX
 # MYLDFLAGS= -Wl,-E
 # MYLIBS= -ldl -lreadline -lhistory
