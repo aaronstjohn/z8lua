@@ -1,3 +1,4 @@
+include ../Makefile.env
 # makefile for building Lua
 # see INSTALL for installation instructions
 # see ../Makefile and luaconf.h for further customization
@@ -16,10 +17,10 @@ TESTS= -g -DLUA_USER_H='"ltests.h"'
 LOCAL = $(CWARNS)
 
 
-CC= g++
-CFLAGS= -Wall $(MYCFLAGS) -O2 -std=c++11
-AR= ar rcu
-RANLIB= ranlib
+# CC= g++
+CFLAGS= -Wall $(MYCFLAGS) -O2 -std=c++17
+# AR= ar rcu
+# RANLIB= ranlib
 RM= rm -f
 
 MYCFLAGS= $(LOCAL)
@@ -63,7 +64,7 @@ o:	$(ALL_O)
 a:	$(ALL_A)
 
 $(CORE_T): $(CORE_O) $(AUX_O) $(LIB_O)
-	$(AR) $@ $?
+	$(AR) rcu $@ $?
 	$(RANLIB) $@
 
 $(LUA_T): $(LUA_O) $(CORE_T)
